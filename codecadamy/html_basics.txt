@@ -1,0 +1,36 @@
+* <!DOCTYPE html> : Let web browser know this is html document. Doesn't actually
+add any structure to the rest of the document. To add the structure, we add:
+<html></html>
+
+* <head></head> : is the metadata for the document. Information about the web
+page that isn't displayed.
+
+* <h1>Josefin</h1> : HEADER 1
+
+* <title></title> : can be put inside the <head> tag. When we open a new tab,
+the name of the tab is the same text we put inside the <title> tag.
+
+* <body></body> : In order for something to be displayed in a html page, we need
+to declare the body. Inside the body we can write:
+<p> text... </p> : which will be displayed as normal text. p is for paragraph.
+
+* <br /> : One of the self-closing tags. This will cause linebreak. Cannot be
+wrapped around raw text.
+
+* <div></div> is something that web developers use to group together elements,
+divide the HTML document into sections. Can apply CSS to many elements at once.
+
+* Inside the <img> tag, we can add 'add ="..."' (without single quotes), which
+will 1. describe the image in words when it fails to load and 2. It will read out
+loud the text for those who are visually impaired and have a special tool
+installed in their browser.
+
+* Can also add a <video> Video not available </video> tag. Inside, we can add
+<video src="..." height="..." width="..." controls> which will set height and
+width, but also add basic controls for the video (play/pause).
+
+* <a href="..."> This is a link to another page! </a>
+* <a href="..." target="_blank"> This is a link to another page which will
+open the link in a new tab! </a>
+
+* <a href="./aboutme.html">About Me</a> links to a internal page
