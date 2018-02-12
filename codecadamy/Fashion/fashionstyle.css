@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Rammetto+One');
+
+body {
+  font-family: 'Rammetto One', cursive;
+  font-family: 'Cinzel', serif;
+  background: linear-gradient(rgb(255, 230, 230),rgb(255, 204, 204));
+}
+
+.test li { /*In this particular example, "li" can be skipped*/
+  color: teal;
+}
+
+h1, h2 {
+  font-variant: small-caps;
+}
+
+h1, h2, h4, p, .test {
+  font-family: "Cinzel";
+}
+
+p {
+  padding-left: 100px;
+  padding-right: 100px;
+}
