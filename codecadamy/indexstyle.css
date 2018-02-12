@@ -1,0 +1,16 @@
+h1 {
+  text-transform: uppercase;
+  font-family: Georgia;
+  font-weight: lighter;
+}
+
+h3 {
+  color: teal;
+  font-family: Georgia;
+  font-weight: lighter;
+}
+
+p {
+  font-family: Georgia;
+  font-style: italic;
+}

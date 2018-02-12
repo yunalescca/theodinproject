@@ -1,0 +1,71 @@
+* Can do inline CSS directly in HTML. <p style="font-family:Arial;">
+
+* Downside with inline CSS: if you want to change every headline,
+you have to do it manually.
+
+* We can write CSS in its own dedicated section inside HTML.
+Within the <head> tags, we can add <style></style>, where we can
+specify what we want to apply CSS to.
+<head>
+  <style>
+    p {   <!-- Can add any tag here -->
+      color: red;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+* To link a CSS file to HTML we have to add, inside the <head> tag:
+  <link href="./style.css" type="text/css" rel ="stylesheet">
+where href links to the location of the .css file.
+
+* Because we can add attributes to our tags in HTML, we can also change
+style according to that:
+.attributeName {
+  color: read;
+  ...
+}
+
+* In HTML we can add a 'class' as an attribute. This is done like so:
+<h1 class="exampleClass">
+<h1 class="moreThan oneClass">
+
+* Wen can also style according to an ID. If we want to change something
+for one element, we can give that tag an id.
+<p id ="exampleID">
+Then, in CSS, we would write
+#exampleID{
+  ...
+}
+
+*CSS classes are meant to be reused over many elements. By writing CSS classes,
+you can style elements in a variety of ways by mixing classes on HTML elements.
+For instance, imagine a page with two headlines. One headline needs to be bold
+and blue, and the other needs to be bold and green. Instead of writing separate
+CSS rules for each headline that repeat each other's code, it's better to write
+a .bold CSS rule, a .green CSS rule, and a .blue CSS rule. Then you can give one
+headline the bold green classes, and the other the bold blue classes.
+
+* CSS override works like this:
+ID most specified, following by CLASS, lastly TAG.
+So, if you have
+h1 {} and .class {}, then the CSS in .class will be used.
+
+* We can add special rules to CSS and HTML.
+h1.special {} means that the CSS code here will only be applied to
+h1 tags that are part of the "special" class. That is, if <p> tags
+also are a part of the "special" class, they will not follow
+the CSS rules specified under h1.special{}.
+
+* CSS also supports selecting items that are nested inside other
+HTML items.
+So, if we have a <div class="description"> tag, and this tag
+contains a lot of children, we can specify what children we want
+to apply certain CSS to by writing
+.description childTag {}
+
+* Those more general will be overridden. That means if we have both
+.class p {} and just p{}, the first will be used over the other.
+
+* To avoid copy-paste code, we can write
+h1, .className {}.
