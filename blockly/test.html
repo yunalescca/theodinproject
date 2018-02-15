@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="./google-blockly-d811809/blockly_compressed.js"></script>
-    <script src="./google-blockly-d811809/blocks_compressed.js"></script>
-    <script src="./google-blockly-d811809/msg/js/en.js"></script>
+    <meta charset="utf-8">
+    <script src="./blockly_compressed.js"></script>
+    <script src="./blocks_compressed.js"></script>
+    <script src="./msg/js/sv.js"></script>
+
+    <style>
+      h1 {
+        font-family: fantasy;
+        color: pink;
+      }
+
+      p, .blocklyTreeLabel{
+        font-family: fantasy;
+      }
+    </style>
   </head>
 
   <body>
+    <h1> Blockly of Awesomeness</h1>
+    <p><b>Du har <span id="capacity"></span> block kvar.</b></p>
 
     <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
     <xml id="toolbox" style="display: none">
-      <category name="Control">
+      <category name="Kontroller">
         <block type="controls_if"></block>
         <block type="controls_repeat_ext"></block>
         <block type="controls_whileUntil"></block>
       </category>
-      <category name="Logic">
+      <category name="Logik">
         <block type="logic_compare"></block>
       </category>
-      <category name="Math">
+      <category name="Matematik">
         <block type="math_number"></block>
         <block type="math_arithmetic"></block>
       </category>
@@ -26,12 +40,19 @@
         <block type="text"></block>
         <block type="text_print"></block>
       </category>
-
     </xml>
 
     <script>
       var workspacePlayground = Blockly.inject('blocklyDiv',
       {maxBlocks:5, toolbox: document.getElementById('toolbox')});
+
+      function onchange(event) {
+        document.getElementById('capacity').textContent =
+          workspacePlayground.remainingCapacity();
+      }
+
+      workspacePlayground.addChangeListener(onchange);
+      onchange();
     </script>
   </body>
 </html>
