@@ -3,7 +3,7 @@
 body {
   font-family: 'Rammetto One', cursive;
   font-family: 'Cinzel', serif;
-  background: linear-gradient(rgb(255, 230, 230),rgb(255, 204, 204));
+  background: linear-gradient(rgb(255, 230, 230),rgb(255, 200, 200));
 }
 
 .test li { /*In this particular example, "li" can be skipped*/

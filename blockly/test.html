@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./google-blockly-d811809/blockly_compressed.js"></script>
+    <script src="./google-blockly-d811809/blocks_compressed.js"></script>
+    <script src="./google-blockly-d811809/msg/js/en.js"></script>
+  </head>
+
+  <body>
+
+    <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+    <xml id="toolbox" style="display: none">
+      <category name="Control">
+        <block type="controls_if"></block>
+        <block type="controls_repeat_ext"></block>
+        <block type="controls_whileUntil"></block>
+      </category>
+      <category name="Logic">
+        <block type="logic_compare"></block>
+      </category>
+      <category name="Math">
+        <block type="math_number"></block>
+        <block type="math_arithmetic"></block>
+      </category>
+      <category name="Text">
+        <block type="text"></block>
+        <block type="text_print"></block>
+      </category>
+
+    </xml>
+
+    <script>
+      var workspacePlayground = Blockly.inject('blocklyDiv',
+      {maxBlocks:5, toolbox: document.getElementById('toolbox')});
+    </script>
+  </body>
+</html>

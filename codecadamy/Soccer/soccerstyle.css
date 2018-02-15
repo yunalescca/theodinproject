@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Rammetto+One');
+
 body {
   /* Old browsers */
   background: #141E30;
@@ -7,6 +9,7 @@ body {
   background: linear-gradient(-45deg, #35577D, #141E30);
   margin: 0;
   padding: 0;
+  font-family: 'Cinzel', cursive;
 }
 
 h1 {
