@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <script src="./blockly_compressed.js"></script>
     <script src="./blocks_compressed.js"></script>
-    <script src="./msg/js/sv.js"></script>
+    <script src="./customblocks/test_block.js"></script>
+    <script src="./msg/js/en.js"></script>
 
     <style>
       h1 {
@@ -24,21 +25,23 @@
 
     <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
     <xml id="toolbox" style="display: none">
-      <category name="Kontroller">
+      <category name="Controls">
         <block type="controls_if"></block>
         <block type="controls_repeat_ext"></block>
         <block type="controls_whileUntil"></block>
       </category>
-      <category name="Logik">
+      <category name="Logic">
         <block type="logic_compare"></block>
       </category>
-      <category name="Matematik">
+      <category name="Math">
         <block type="math_number"></block>
         <block type="math_arithmetic"></block>
       </category>
       <category name="Text">
         <block type="text"></block>
         <block type="text_print"></block>
+        <block type="integer"></block>
+        <block type="integer2"></block>
       </category>
     </xml>
 
