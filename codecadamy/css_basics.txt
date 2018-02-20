@@ -30,7 +30,7 @@ style according to that:
 <h1 class="exampleClass">
 <h1 class="moreThan oneClass">
 
-* Wen can also style according to an ID. If we want to change something
+* We can also style according to an ID. If we want to change something
 for one element, we can give that tag an id.
 <p id ="exampleID">
 Then, in CSS, we would write
