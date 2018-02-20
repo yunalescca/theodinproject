@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>My Blockly</title>
     <meta charset="utf-8">
     <script src="./blockly_compressed.js"></script>
     <script src="./blocks_compressed.js"></script>
+    <script src="./javascript_compressed.js"></script>
     <script src="./customblocks/test_block.js"></script>
     <script src="./msg/js/en.js"></script>
+    <link rel="stylesheet" type ="text/css" href = "test.css">
 
-    <style>
-      h1 {
-        font-family: fantasy;
-        color: pink;
-      }
-
-      p, .blocklyTreeLabel{
-        font-family: fantasy;
-      }
-    </style>
   </head>
 
   <body>
-    <h1> Blockly of Awesomeness</h1>
-    <p><b>Du har <span id="capacity"></span> block kvar.</b></p>
+    <header>
+      <h1>Blockly of Awesomeness</h1>
+      <p><b>Du har <span id="capacity"></span> block kvar.</b></p>
+    </header>
 
-    <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+
+    <div id="blocklyContainer">
+      <div id="blocklyArea"></div>
+    </div>
+    <div id="blocklyDiv" style="position:absolute"></div>
     <xml id="toolbox" style="display: none">
       <category name="Controls">
         <block type="controls_if"></block>
@@ -36,26 +35,46 @@
       <category name="Math">
         <block type="math_number"></block>
         <block type="math_arithmetic"></block>
+        <block type="variables_set"></block>
+        <block type="variables_get"></block>
       </category>
+      <category name="Variables" custom="VARIABLE"></category>
       <category name="Text">
         <block type="text"></block>
         <block type="text_print"></block>
-        <block type="integer"></block>
-        <block type="integer2"></block>
       </category>
+      <category name="Customs">
+        <block type="integer"></block>
+        <block type="my_if"></block>
+        <block type="my_for"></block>
+        <block type="my_if_con"></block>
     </xml>
 
     <script>
-      var workspacePlayground = Blockly.inject('blocklyDiv',
-      {maxBlocks:5, toolbox: document.getElementById('toolbox')});
+  var blocklyArea = document.getElementById('blocklyArea');
+  var blocklyDiv = document.getElementById('blocklyDiv');
+  var workspacePlayground = Blockly.inject(blocklyDiv,
+      {toolbox: document.getElementById('toolbox')});
+  var onresize = function(e) {
+    // Compute the absolute coordinates and dimensions of blocklyArea.
+    var element = blocklyArea;
+    var x = 0;
+    var y = 0;
+    do {
+      x += element.offsetLeft;
+      y += element.offsetTop;
+      element = element.offsetParent;
+    } while (element);
+    // Position blocklyDiv over blocklyArea.
+    blocklyDiv.style.left = x + 'px';
+    blocklyDiv.style.top = y + 'px';
+    blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
+    blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
+  };
+  window.addEventListener('resize', onresize, false);
+  onresize();
+  Blockly.svgResize(workspacePlayground);
+</script>
 
-      function onchange(event) {
-        document.getElementById('capacity').textContent =
-          workspacePlayground.remainingCapacity();
-      }
-
-      workspacePlayground.addChangeListener(onchange);
-      onchange();
-    </script>
   </body>
 </html>
